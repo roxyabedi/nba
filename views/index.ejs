@@ -11,13 +11,12 @@
     <div class="scoring">
         <h2>'22-'23 Season</h2>
             <p><ul>
-                <li>Points: </li>
-                <li>Assists: </li>
-                <li>Rebounds: </li>
-                <li>Blocks: </li>
+                <li>Points: <%= locals.pts %> </li>
+                <li>Assists: <%= locals.ast %> </li>
+                <li>Rebounds: <%= locals.reb %>  </li>
+                <li>Blocks: <%= locals.blk %> </li>
             </ul></p>
-        <p><%= locals.first_name %></p>
-        <p><%= locals.last_name %></p>
+        <p><%= locals.first_name %> <%= locals.last_name %></p>
     </div>
 
     <div class="playerName">
