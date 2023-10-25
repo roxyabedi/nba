@@ -86,18 +86,6 @@ app.post("/player1", async (req, res) => {
     console.log(((error || {}).response || {}).data);
   }
 });
-// app.post("/", async (req, res) => {
-//     try {
-//       //const result = await axios.get(`https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerID}`);
-//       const result = await axios.get(`https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=434`);
-//       //playerID = result.data.data.id;
-//       points = result.data.data[0];
-//       console.log("roxtest", points);
-
-//     } catch (error) {
-//       console.log(((error || {}).response || {}).data);
-//     }
-// });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
