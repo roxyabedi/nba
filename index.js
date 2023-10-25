@@ -87,6 +87,37 @@ app.post("/player1", async (req, res) => {
   }
 });
 
+app.post("/player2", async (req, res) => {
+  //gets the value of the submit button
+  const playerNameInput = req.body["playerCompTwo"];
+  try {
+    //makes call to the api for player information
+    const apiPlayerInfo = await axios.get(
+      `https://www.balldontlie.io/api/v1/players?search=${playerNameInput}`
+    );
+
+    //sets the object to be passed to the ejs
+    const playerInformation = apiPlayerInfo.data.data[0];
+
+    const playerId = playerInformation.id; //player id
+
+    //makes call to the api for player stats
+    const playerStats = await axios.get(
+      `https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerId}`
+    );
+
+    const seasonStats = playerStats.data.data[0];
+
+    //combines player information
+    player2 = Object.assign(playerInformation, seasonStats);
+
+    //reloads the page
+    res.redirect("/");
+  } catch (error) {
+    console.log(((error || {}).response || {}).data);
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
