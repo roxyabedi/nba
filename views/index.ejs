@@ -11,12 +11,12 @@
     <div class="scoring">
         <h2>'22-'23 Season</h2>
             <p><ul>
-                <li>Points: <%= locals.pts %> </li>
-                <li>Assists: <%= locals.ast %> </li>
-                <li>Rebounds: <%= locals.reb %>  </li>
-                <li>Blocks: <%= locals.blk %> </li>
+                <li>Points: <%= locals[0].pts %> </li>
+                <li>Assists: <%= locals[0].ast %> </li>
+                <li>Rebounds: <%= locals[0].reb %>  </li>
+                <li>Blocks: <%= locals[0].blk %> </li>
             </ul></p>
-        <p><%= locals.first_name %> <%= locals.last_name %></p>
+        <p><%= locals[0].first_name %> <%= locals[0].last_name %></p>
     </div>
 
     <div class="playerName">
@@ -29,25 +29,28 @@
     <div class="comparison">
         <h2>Player Comparison</h2>
             <p><ul>
-                <li>Points: <%= locals.pts %> </li>
-                <li>Assists: <%= locals.ast %> </li>
-                <li>Rebounds: <%= locals.reb %>  </li>
-                <li>Blocks: <%= locals.blk %> </li>
+                <li>Points: <%= locals[1].pts %> </li>
+                <li>Assists: <%= locals[1].ast %> </li>
+                <li>Rebounds: <%= locals[1].reb %>  </li>
+                <li>Blocks: <%= locals[1].blk %> </li>
             </ul></p>
-            <p><%= locals.first_name %> <%= locals.last_name %></p>
-        <form class="item" action="/" method="post">
-            <input name="playerCompOne" type="text" placeholder="Enter Player Name"></form>
-            <input class="submit" type="submit">
+            <p><%= locals[1].first_name %> <%= locals[1].last_name %></p>
+        <form class="item" action="/player1" method="post">
+            <input name="playerCompOne" type="text" placeholder="Enter Player Name">
+            <button class="add" name="btn" type="submit">submit</button>
+        </form>
+
             <p><ul>
-                <li>Points: <%= locals.pts %> </li>
-                <li>Assists: <%= locals.ast %> </li>
-                <li>Rebounds: <%= locals.reb %>  </li>
-                <li>Blocks: <%= locals.blk %> </li>
+                <li>Points: <%= locals[2].pts %> </li>
+                <li>Assists: <%= locals[2].ast %> </li>
+                <li>Rebounds: <%= locals[2].reb %>  </li>
+                <li>Blocks: <%= locals[2].blk %> </li>
             </ul></p>
-            <p><%= locals.first_name %> <%= locals.last_name %></p>
+            <p><%= locals[2].first_name %> <%= locals[2].last_name %></p>
         <form class="item" action="/" method="post">
-            <input name="playerCompTwo" type="text" placeholder="Enter Player Name"></form>
-        <input class="submit" type="submit">
+            <input name="playerCompTwo" type="text" placeholder="Enter Player Name">
+            <button class="add" name="btn" type="submit">submit</button>
+        </form>
     </div>
 </body>
 
