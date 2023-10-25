@@ -29,20 +29,24 @@
     <div class="comparison">
         <h2>Player Comparison</h2>
             <p><ul>
-                <li>Points: </li>
-                <li>Assists: </li>
-                <li>Rebounds: </li>
-                <li>Blocks: </li>
+                <li>Points: <%= locals.pts %> </li>
+                <li>Assists: <%= locals.ast %> </li>
+                <li>Rebounds: <%= locals.reb %>  </li>
+                <li>Blocks: <%= locals.blk %> </li>
             </ul></p>
-        <form><input type="text" placeholder="Enter Player Name"></form>
-        <input class="submit" type="submit">
+            <p><%= locals.first_name %> <%= locals.last_name %></p>
+        <form class="item" action="/" method="post">
+            <input name="playerCompOne" type="text" placeholder="Enter Player Name"></form>
+            <input class="submit" type="submit">
             <p><ul>
-                <li>Points: </li>
-                <li>Assists: </li>
-                <li>Rebounds: </li>
-                <li>Blocks: </li>
+                <li>Points: <%= locals.pts %> </li>
+                <li>Assists: <%= locals.ast %> </li>
+                <li>Rebounds: <%= locals.reb %>  </li>
+                <li>Blocks: <%= locals.blk %> </li>
             </ul></p>
-        <form><input type="text" placeholder="Enter Player Name"></form>
+            <p><%= locals.first_name %> <%= locals.last_name %></p>
+        <form class="item" action="/" method="post">
+            <input name="playerCompTwo" type="text" placeholder="Enter Player Name"></form>
         <input class="submit" type="submit">
     </div>
 </body>

@@ -13,7 +13,7 @@ app.use(express.static("public"));
 
 let playerNameInput = "";
 let playerInformation = {};
-let points = {};
+let seasonStats = {};
 
 //gets called when the page is loaded
 app.get("/", async (req, res) => {
@@ -40,7 +40,12 @@ app.post("/", async (req, res) => {
     const playerStats = await axios.get(
       `https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerId}`
     );
-    console.log("scotttest playerStats", playerStats.data.data[0]);
+
+    seasonStats = playerStats.data.data[0];
+
+    const points = seasonStats.pts;
+    console.log("roxtest points", points);
+    // console.log("scotttest playerStats", playerStats.data.data[0]);
 
     //reloads the page
     res.redirect("/");
