@@ -9,7 +9,7 @@
 <body>
     <h1>Boston Celtics Stats</h1>
     <div class="scoring">
-        <h2>'22-'23 Season</h2>
+        <h2>'23-'24 Season</h2>
             <p><ul>
                 <li>Points: <%= locals[0].pts %> </li>
                 <li>Assists: <%= locals[0].ast %> </li>
@@ -20,7 +20,7 @@
     </div>
 
     <div class="playerName">
-        <form class="item" action="/" method="post">
+        <form class="item" action="/" method="post" autocomplete="off">
             <input name="playerNameInput" type="text" placeholder="Enter Player Name">
             <button class="add" name="btn" type="submit">submit</button>
         </form>
@@ -35,7 +35,7 @@
                 <li>Blocks: <%= locals[1].blk %> </li>
             </ul></p>
             <p><%= locals[1].first_name %> <%= locals[1].last_name %></p>
-        <form class="item" action="/player1" method="post">
+        <form class="item" action="/player1" method="post" autocomplete="off">
             <input name="playerCompOne" type="text" placeholder="Enter Player Name">
             <button class="add" name="btn" type="submit">submit</button>
         </form>
@@ -47,10 +47,31 @@
                 <li>Blocks: <%= locals[2].blk %> </li>
             </ul></p>
             <p><%= locals[2].first_name %> <%= locals[2].last_name %></p>
-        <form class="item" action="/player2" method="post">
+        <form class="item" action="/player2" method="post" autocomplete="off">
             <input name="playerCompTwo" type="text" placeholder="Enter Player Name">
             <button class="add" name="btn" type="submit">submit</button>
         </form>
+    </div>
+
+    <div class="roster">
+        <h2>'23-'24 Roster</h2>
+        <img class ="jt" src="/images/jt.png">
+        <img class ="jb" src="/images/jb.png">
+        <img class ="kp" src="/images/kp.png">
+        <img class ="jrue" src="/images/jrue.png">
+        <img class ="dwhite" src="/images/dwhite.png">
+        <img class ="al" src="/images/al.png">
+        <img class ="pp" src="/images/pp.png">
+        <img class ="sam" src="/images/sam.png">
+        <img class ="oshae" src="/images/oshae.png">
+        <img class ="luke" src="/images/luke.png">
+        <img class ="db" src="/images/db.png">
+        <img class ="lamar" src="/images/lamar.png">
+        <img class ="svi" src="/images/svi.png">
+        <img class ="walsh" src="/images/walsh.png">
+        <img class ="jd" src="/images/jd.png">
+        <img class ="queta" src="/images/queta.png">
+        <img class ="knight" src="/images/knight.png">
     </div>
 </body>
 

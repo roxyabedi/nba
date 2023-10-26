@@ -41,7 +41,7 @@ app.post("/", async (req, res) => {
 
     //makes call to the api for player stats
     const playerStats = await axios.get(
-      `https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerId}`
+      `https://www.balldontlie.io/api/v1/season_averages?season=2023&player_ids[]=${playerId}`
     );
 
     const seasonStats = playerStats.data.data[0];
@@ -72,7 +72,7 @@ app.post("/player1", async (req, res) => {
 
     //makes call to the api for player stats
     const playerStats = await axios.get(
-      `https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerId}`
+      `https://www.balldontlie.io/api/v1/season_averages?season=2023&player_ids[]=${playerId}`
     );
 
     const seasonStats = playerStats.data.data[0];
@@ -103,7 +103,7 @@ app.post("/player2", async (req, res) => {
 
     //makes call to the api for player stats
     const playerStats = await axios.get(
-      `https://www.balldontlie.io/api/v1/season_averages?season=2022&player_ids[]=${playerId}`
+      `https://www.balldontlie.io/api/v1/season_averages?season=2023&player_ids[]=${playerId}`
     );
 
     const seasonStats = playerStats.data.data[0];
