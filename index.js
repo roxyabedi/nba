@@ -19,6 +19,9 @@ let player0 = {};
 let player1 = {};
 let player2 = {};
 
+// var modal = document.getElementById("exampleModal");
+// var modalImg = odal
+
 //gets called when the page is loaded
 app.get("/", async (req, res) => {
   res.render("index.ejs", [player0, player1, player2]);

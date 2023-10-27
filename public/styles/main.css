@@ -58,3 +58,13 @@ ul {
 p {
   text-align: center;
 }
+
+.roster {
+  padding-left: 170px
+}
+
+.btn-link {
+  border: 2px solid white;
+  border-radius: 30px;
+
+}
