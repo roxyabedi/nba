@@ -19,6 +19,9 @@ let player0 = {};
 let player1 = {};
 let player2 = {};
 
+let id = "";
+console.log("roxtest", id)
+
 // var modal = document.getElementById("exampleModal");
 // var modalImg = odal
 
