@@ -18,13 +18,14 @@ app.use(express.static("public"));
 let player0 = {};
 let player1 = {};
 let player2 = {};
+let playerCardImage = "/images/default.png";
 
 // var modal = document.getElementById("exampleModal");
 // var modalImg = odal
 
 //gets called when the page is loaded
 app.get("/", async (req, res) => {
-  res.render("index.ejs", [player0, player1, player2]);
+  res.render("index.ejs", [player0, player1, player2, { playerCardImage }]);
 });
 
 //gets called when the submit button is pressed
@@ -115,6 +116,20 @@ app.post("/player2", async (req, res) => {
     player2 = Object.assign(playerInformation, seasonStats);
 
     //reloads the page
+    res.redirect("/");
+  } catch (error) {
+    console.log(((error || {}).response || {}).data);
+  }
+});
+
+app.post("/playerTile", async (req, res) => {
+  console.log("scotttest goes through");
+  const playerNamePath = Object.keys(req.body)[0];
+  try {
+    //reloads the page
+    console.log("scotttest test1", playerNamePath);
+    playerCardImage = `/images/${playerNamePath}.png`;
+    console.log(playerCardImage);
     res.redirect("/");
   } catch (error) {
     console.log(((error || {}).response || {}).data);
