@@ -18,14 +18,12 @@ app.use(express.static("public"));
 let player0 = {};
 let player1 = {};
 let player2 = {};
-let playerCardImage = "/images/default.png";
-
-// var modal = document.getElementById("exampleModal");
-// var modalImg = odal
+let playerCardImage = "";
+let player4 = {};
 
 //gets called when the page is loaded
 app.get("/", async (req, res) => {
-  res.render("index.ejs", [player0, player1, player2, { playerCardImage }]);
+  res.render("index.ejs", [player0, player1, player2, { playerCardImage }, player4]);
 });
 
 //gets called when the submit button is pressed
@@ -130,6 +128,39 @@ app.post("/playerTile", async (req, res) => {
     console.log("scotttest test1", playerNamePath);
     playerCardImage = `/images/${playerNamePath}.png`;
     console.log(playerCardImage);
+    res.redirect("/");
+  } catch (error) {
+    console.log(((error || {}).response || {}).data);
+  }
+});
+
+app.post("/player4", async (req, res) => {
+  console.log("roxtest goes through");
+  //gets the value of the submit button
+  const playerNamePathCard = Object.keys(req.body)[0];
+  try {
+    //makes call to the api for player information
+    console.log("roxtest test1", playerNamePathCard);
+    const apiPlayerInfo = await axios.get(
+      `https://www.balldontlie.io/api/v1/players?search=${playerNamePathCard}`
+    );
+
+    //sets the object to be passed to the ejs
+    const playerInformation = apiPlayerInfo.data.data[0];
+
+    const playerId = playerInformation.id; //player id
+
+    //makes call to the api for player stats
+    const playerStats = await axios.get(
+      `https://www.balldontlie.io/api/v1/season_averages?season=2023&player_ids[]=${playerId}`
+    );
+
+    const seasonStats = playerStats.data.data[0];
+
+    //combines player information
+    player4 = Object.assign(playerInformation, seasonStats);
+
+    //reloads the page
     res.redirect("/");
   } catch (error) {
     console.log(((error || {}).response || {}).data);
