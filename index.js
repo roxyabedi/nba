@@ -128,21 +128,9 @@ app.post("/playerTile", async (req, res) => {
     console.log("scotttest test1", playerNamePath);
     playerCardImage = `/images/${playerNamePath}.png`;
     console.log(playerCardImage);
-    res.redirect("/");
-  } catch (error) {
-    console.log(((error || {}).response || {}).data);
-  }
-});
-
-app.post("/player4", async (req, res) => {
-  console.log("roxtest goes through");
-  //gets the value of the submit button
-  const playerNamePathCard = Object.keys(req.body)[0];
-  try {
-    //makes call to the api for player information
-    console.log("roxtest test1", playerNamePathCard);
+    console.log("roxtest test1", playerNamePath);
     const apiPlayerInfo = await axios.get(
-      `https://www.balldontlie.io/api/v1/players?search=${playerNamePathCard}`
+      `https://www.balldontlie.io/api/v1/players?search=${playerNamePath}`
     );
 
     //sets the object to be passed to the ejs
@@ -159,8 +147,6 @@ app.post("/player4", async (req, res) => {
 
     //combines player information
     player4 = Object.assign(playerInformation, seasonStats);
-
-    //reloads the page
     res.redirect("/");
   } catch (error) {
     console.log(((error || {}).response || {}).data);

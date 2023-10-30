@@ -46,8 +46,11 @@
         </form>
     </div>
 
-    <div class="comparison">
-        <h2>Player Comparison</h2>
+    <div class="player-comparison">
+    <h2 class="comparison">Player Comparison</h2>
+    <div class="comparison-container">
+        <div class="row">
+            <div class="col-md-6"></div>
             <p><ul>
                 <li>Points: <%= locals[1].pts %> </li>
                 <li>Assists: <%= locals[1].ast %> </li>
@@ -56,10 +59,31 @@
             </ul></p>
             <p><%= locals[1].first_name %> <%= locals[1].last_name %></p>
         <form class="item" action="/player1" method="post" autocomplete="off">
-            <input name="playerCompOne" type="text" placeholder="Enter Player Name">
+            <input name="playerCompOne" type="text" placeholder="Enter Player Name" id="txtAutoComplete" list="dlAutocomplete">
+            <datalist id="dlAutocomplete">
+                <option value="Jayson Tatum"></option>
+                <option value="Jaylen Brown"></option>
+                <option value="Jrue Holiday"></option>
+                <option value="Kristaps Porzingis"></option>
+                <option value="Al Horford"></option>
+                <option value="Derrick White"></option>
+                <option value="Oshae Brissett"></option>
+                <option value="Payton Pritchard"></option>
+                <option value="Sam Hauser"></option>
+                <option value="Luke Kornet"></option>
+                <option value="Lamar Stevens"></option>
+                <option value="JD Davison"></option>
+                <option value="Svi Mykhailiuk"></option>
+                <option value="Neemias Queta"></option>
+                <option value="Nathan Knight"></option>
+                <option value="Dalano Banton"></option>
+                <option value="Jordan Walsh"></option>
+            </datalist>
             <button class="add" name="btn" type="submit">submit</button>
         </form>
-
+        </div>
+        <div class="row">
+            <div class="col-md-6"></div>
             <p><ul>
                 <li>Points: <%= locals[2].pts %> </li>
                 <li>Assists: <%= locals[2].ast %> </li>
@@ -68,41 +92,58 @@
             </ul></p>
             <p><%= locals[2].first_name %> <%= locals[2].last_name %></p>
         <form class="item" action="/player2" method="post" autocomplete="off">
-            <input name="playerCompTwo" type="text" placeholder="Enter Player Name">
+            <input name="playerCompTwo" type="text" placeholder="Enter Player Name" id="txtAutoComplete" list="dlAutocomplete">
+            <datalist id="dlAutocomplete">
+                <option value="Jayson Tatum"></option>
+                <option value="Jaylen Brown"></option>
+                <option value="Jrue Holiday"></option>
+                <option value="Kristaps Porzingis"></option>
+                <option value="Al Horford"></option>
+                <option value="Derrick White"></option>
+                <option value="Oshae Brissett"></option>
+                <option value="Payton Pritchard"></option>
+                <option value="Sam Hauser"></option>
+                <option value="Luke Kornet"></option>
+                <option value="Lamar Stevens"></option>
+                <option value="JD Davison"></option>
+                <option value="Svi Mykhailiuk"></option>
+                <option value="Neemias Queta"></option>
+                <option value="Nathan Knight"></option>
+                <option value="Dalano Banton"></option>
+                <option value="Jordan Walsh"></option>
+            </datalist>
             <button class="add" name="btn" type="submit">submit</button>
         </form>
+        </div>
+    </div>
     </div>
     
+    <div class="playerSpotlight">
     <div class="modal-content">
-    <form class="item" action="/player4" method="post" autocomplete="off">
-        <div class="modal-header">
-        <h1 class="modal-title fs-5" id="ModalLabel"><%= locals[4].first_name %> <%= locals[4].last_name %></h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
+        <h2 class="modal-title" id="ModalLabel"><%= locals[4].first_name %> <%= locals[4].last_name %></h2>
     <div class="modal-body">
         <div class="container-fluid">
         <div class="row">
+            <div class="col-md-4">
+                <ul>
+                    <h2>Player Information</h2>
+                <li>Position: <%= locals[4].position %> </li>
+                <li>Height: <%= locals[4].height_feet %>' <%= locals[4].height_inches %>" </li>
+                <li>Weight: <%= locals[4].weight_pounds %> lbs</li>
+                </ul> 
+            </div>
             <div class="col-md-4"><img src=<%= locals[3].playerCardImage %>></div>
-            <div class="col-md-4 ms-auto"></div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 ms-auto"></div>
-            <div class="col-md-2 ms-auto"></div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 ms-auto"></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-9">
-            <div class="row">
-                <div class="col-8 col-sm-6">
-                </div>
-                <div class="col-4 col-sm-6">
-                </div>
-            </div>
+            <div class="col-md-4 ms-auto">
+                <ul>
+                    <h2>Season Averages</h2>
+                <li>Points: <%= locals[4].pts %> </li>
+                <li>Assists: <%= locals[4].ast %> </li>
+                <li>Rebounds: <%= locals[4].reb %>  </li>
+                <li>Blocks: <%= locals[4].blk %> </li>
+                </ul> 
             </div>
         </div>
-    </form>
+    </div>
     </div>
 
     <form class="item" action="/playerTile" method="post" autocomplete="off">
@@ -110,50 +151,50 @@
         <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="jayson_tatum">
             <img src="/images/jayson_tatum.png">
         </button>
-        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="jb">
-            <img src="/images/jb.png">
+        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="jaylen_brown">
+            <img src="/images/jaylen_brown.png">
         </button> 
-        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="kp">
-            <img src="/images/kp.png">
+        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="kristaps_porzingis">
+            <img src="/images/kristaps_porzingis.png">
         </button> 
-        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="jrue">
-            <img src="/images/jrue.png">
+        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="jrue_holiday">
+            <img src="/images/jrue_holiday.png">
         </button> 
-        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="dwhite">
-            <img src="/images/dwhite.png">
+        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="derrick_white">
+            <img src="/images/derrick_white.png">
         </button> 
-        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="al">
-            <img src="/images/al.png">
+        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="al_horford">
+            <img src="/images/al_horford.png">
         </button> 
-        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="pp">
-            <img src="/images/pp.png">
+        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="payton_pritchard">
+            <img src="/images/payton_pritchard.png">
         </button> 
-        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="sam">
-            <img src="/images/sam.png">
+        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="sam_hauser">
+            <img src="/images/sam_hauser.png">
         </button> 
-        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="luke">
-            <img src="/images/luke.png">
+        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="luke_kornet">
+            <img src="/images/luke_kornet.png">
         </button> 
-        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="oshae">
-            <img src="/images/oshae.png">
+        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="oshae_brissett">
+            <img src="/images/oshae_brissett.png">
         </button> 
-        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="lamar">
-            <img src="/images/lamar.png">
+        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="lamar_stevens">
+            <img src="/images/lamar_stevens.png">
         </button> 
-        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="playerImageTile">
-            <img src="/images/svi.png">
+        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="svi_mykhailiuk">
+            <img src="/images/svi_mykhailiuk.png">
         </button> 
-        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="playerImageTile">
-            <img src="/images/walsh.png">
+        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="jordan_walsh">
+            <img src="/images/jordan_walsh.png">
         </button> 
-        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="playerImageTile">
-            <img src="/images/jd.png">
+        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="jd_davison">
+            <img src="/images/jd_davison.png">
         </button> 
-        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="playerImageTile">
-            <img src="/images/queta.png">
+        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="neemias_queta">
+            <img src="/images/neemias_queta.png">
         </button> 
-        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="playerImageTile">
-            <img src="/images/knight.png">
+        <button type="submit" class="playerTile btn btn-link" data-bs-toggle="modal" data-bs-target="#Modal" id="playerNameTile" name="nathan_knight">
+            <img src="/images/nathan_knight.png">
         </button> 
     </div>
 </form>
