@@ -3,14 +3,9 @@ import axios from "axios";
 import ejs from "ejs";
 import bodyParser from "body-parser";
 
-// array = []
-// object = {}
-//how to do ______ with object/array/string in js
-
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3030;
 
-//scott was here
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
