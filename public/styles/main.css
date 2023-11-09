@@ -131,13 +131,13 @@ input {
     -moz-appearance: none;
     appearance: none;
     border: transparent;
+    padding: 0;
   }
   
   .add {
     border: transparent;
     background-color: #EFEFEF;
     color: black;
-    height: 26px;
     display: flex;
     justify-content: center;
     align-items: center;
