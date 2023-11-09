@@ -117,8 +117,29 @@ input {
 .add {
   border: transparent;
   background-color: #EFEFEF;
+  color: black;
   height: 26px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+@media (min-width: 576px) and (max-width: 575.98px) { 
+  input {
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: transparent;
+  }
+  
+  .add {
+    border: transparent;
+    background-color: #EFEFEF;
+    color: black;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ }
