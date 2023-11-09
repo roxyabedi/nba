@@ -105,3 +105,20 @@ p {
 .player-comparison {
   padding-top: 8px;
 }
+
+input {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: transparent;
+}
+
+.add {
+  border: transparent;
+  background-color: #EFEFEF;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
