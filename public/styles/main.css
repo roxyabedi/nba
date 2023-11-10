@@ -124,7 +124,7 @@ input {
   align-items: center;
 }
 
-@media only screen and (max-width: 844px) { 
+/* @media only screen and (max-width: 844px) { 
   input {
     border-radius: 0;
     -webkit-appearance: none;
@@ -143,4 +143,4 @@ input {
     justify-content: center;
     align-items: center;
   }
- }
+ } */
