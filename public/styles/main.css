@@ -112,6 +112,7 @@ input {
   -moz-appearance: none;
   appearance: none;
   border: transparent;
+  height: 26px;
 }
 
 .add {
