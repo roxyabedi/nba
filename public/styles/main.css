@@ -123,24 +123,3 @@ input {
   justify-content: center;
   align-items: center;
 }
-
-@media only screen and (max-width: 480px) { 
-  input {
-    border-radius: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: transparent;
-    padding: 0 !important;
-  }
-  
-  .add {
-    border: transparent;
-    background-color: #EFEFEF;
-    color: black;
-    height: 24px !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
- }
