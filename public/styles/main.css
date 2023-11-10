@@ -125,89 +125,6 @@ input {
 }
 
 @media only screen and (max-width: 844px) { 
-  h1 {
-    text-align: center;
-  }
-  
-  h2 {
-    text-align: center;
-  }
-  
-  form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-  }
-  
-  .comparison {
-    text-align: center;
-  }
-  
-  .playerName {
-    text-align: center;
-  }
-  
-  li {
-    list-style: none;
-  }
-  
-  ul {
-    text-align: center;
-    padding: 0px;
-  }
-  
-  p {
-    text-align: center;
-  }
-  
-  .roster {
-    text-align: center;
-  }
-  
-  .btn-link {
-    border: 2px solid white;
-    border-radius: 30px;
-  
-  }
-  
-  .modal-title {
-    text-align: center;
-  }
-  
-  .col-md-4 {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  
-  .playerTile {
-   margin: 5px;
-  }
-  
-  .comparison-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px
-  }
-  
-  p { 
-    font-weight: bold;
-  }
-  
-  .row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .player-comparison {
-    padding-top: 8px;
-  }
-  
   input {
     border-radius: 0;
     -webkit-appearance: none;
@@ -221,7 +138,7 @@ input {
     border: transparent;
     background-color: #EFEFEF;
     color: black;
-    height: 24px;
+    height: 24px !important;
     display: flex;
     justify-content: center;
     align-items: center;
