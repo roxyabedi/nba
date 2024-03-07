@@ -9,7 +9,7 @@ const port = process.env.PORT || 3030;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-const apiKey = '28186af8-31c8-4c0b-a7fb-a88172da42b2';
+// const process.env.API_KEY = '28186af8-31c8-4c0b-a7fb-a88172da42b2';
 
 let player0 = {};
 let player1 = {};
@@ -21,7 +21,7 @@ const axiosGetWithAuthorization = async (url) => {
   try {
     const response = await axios.get(url, {
       headers: {
-        Authorization: apiKey,
+        Authorization: process.env.API_KEY,
       },
     });
     return response.data;
