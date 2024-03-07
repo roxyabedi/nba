@@ -124,9 +124,14 @@
             <div class="col-md-4">
                 <ul>
                     <h2>Player Information</h2>
+                <li>Number: <%= locals[4].jersey_number %></li>
                 <li>Position: <%= locals[4].position %> </li>
-                <li>Height: <%= locals[4].height_feet %>' <%= locals[4].height_inches %>" </li>
-                <li>Weight: <%= locals[4].weight_pounds %> lbs</li>
+                <li>Height: <%= locals[4].height %> </li>
+                <li>Weight: <%= locals[4].weight %> lbs</li>
+                <li>College: <%= locals[4].college %> </li>
+                <li>Country: <%= locals[4].country %> </li>
+                <li>Draft Year: <%= locals[4].draft_year %> </li>
+                <li>Drafted: Round <%= locals[4].draft_round %> Pick <%= locals[4].draft_number %></li>
                 </ul> 
             </div>
             <div class="col-md-4"><img src=<%= locals[3].playerCardImage %>></div>
