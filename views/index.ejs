@@ -12,10 +12,10 @@
     <div class="scoring">
         <h2>'23-'24 Season</h2>
             <p><ul>
-                <li>Points: <%= locals[0].pts %> </li>
-                <li>Assists: <%= locals[0].ast %> </li>
-                <li>Rebounds: <%= locals[0].reb %>  </li>
-                <li>Blocks: <%= locals[0].blk %> </li>
+                <li>Points: <%= parseFloat(locals[0].pts || 0).toFixed(2) == 0 ? '' : parseFloat(locals[0].pts || 0).toFixed(2)  %> </li>
+                <li>Assists: <%= parseFloat(locals[0].ast || 0).toFixed(2) == 0 ? '' : parseFloat(locals[0].ast || 0).toFixed(2)   %> </li>
+                <li>Rebounds: <%= parseFloat(locals[0].reb || 0).toFixed(2) == 0 ? '' : parseFloat(locals[0].reb || 0).toFixed(2)  %>  </li>
+                <li>Blocks: <%= parseFloat(locals[0].blk || 0).toFixed(2) == 0 ? '' : parseFloat(locals[0].blk || 0).toFixed(2)  %> </li>
             </ul></p>
         <p><%= locals[0].first_name %> <%= locals[0].last_name %></p>
     </div>
@@ -51,10 +51,10 @@
         <div class="row">
             <div class="col-md-6"></div>
             <p><ul>
-                <li>Points: <%= locals[1].pts %> </li>
-                <li>Assists: <%= locals[1].ast %> </li>
-                <li>Rebounds: <%= locals[1].reb %>  </li>
-                <li>Blocks: <%= locals[1].blk %> </li>
+                <li>Points: <%= parseFloat(locals[1].pts || 0).toFixed(2) == 0 ? '' : parseFloat(locals[1].pts || 0).toFixed(2)  %> </li>
+                <li>Assists: <%= parseFloat(locals[1].ast || 0).toFixed(2) == 0 ? '' : parseFloat(locals[1].ast || 0).toFixed(2)  %> </li>
+                <li>Rebounds: <%= parseFloat(locals[1].reb || 0).toFixed(2) == 0 ? '' : parseFloat(locals[1].reb || 0).toFixed(2) %>  </li>
+                <li>Blocks: <%= parseFloat(locals[1].blk || 0).toFixed(2) == 0 ? '' : parseFloat(locals[1].blk || 0).toFixed(2)  %> </li>
             </ul></p>
             <p><%= locals[1].first_name %> <%= locals[1].last_name %></p>
         <form class="item" action="/player1" method="post" autocomplete="off">
@@ -83,10 +83,10 @@
         <div class="row">
             <div class="col-md-6"></div>
             <p><ul>
-                <li>Points: <%= locals[2].pts %> </li>
-                <li>Assists: <%= locals[2].ast %> </li>
-                <li>Rebounds: <%= locals[2].reb %>  </li>
-                <li>Blocks: <%= locals[2].blk %> </li>
+                <li>Points: <%= parseFloat(locals[2].pts || 0).toFixed(2) == 0 ? '' : parseFloat(locals[2].pts || 0).toFixed(2)  %> </li>
+                <li>Assists: <%= parseFloat(locals[2].ast || 0).toFixed(2) == 0 ? '' : parseFloat(locals[2].ast || 0).toFixed(2)  %> </li>
+                <li>Rebounds: <%= parseFloat(locals[2].reb || 0).toFixed(2) == 0 ? '' : parseFloat(locals[2].reb || 0).toFixed(2)   %>  </li>
+                <li>Blocks: <%= parseFloat(locals[2].blk || 0).toFixed(2) == 0 ? '' : parseFloat(locals[2].blk || 0).toFixed(2)  %> </li>
             </ul></p>
             <p><%= locals[2].first_name %> <%= locals[2].last_name %></p>
         <form class="item" action="/player2" method="post" autocomplete="off">
@@ -138,10 +138,10 @@
             <div class="col-md-4 ms-auto">
                 <ul>
                     <h2>Season Averages</h2>
-                <li>Points: <%= locals[4].pts %> </li>
-                <li>Assists: <%= locals[4].ast %> </li>
-                <li>Rebounds: <%= locals[4].reb %>  </li>
-                <li>Blocks: <%= locals[4].blk %> </li>
+                <li>Points: <%= parseFloat(locals[4].pts || 0).toFixed(2) == 0 ? '' : parseFloat(locals[4].pts || 0).toFixed(2) %> </li>
+                <li>Assists: <%= parseFloat(locals[4].ast || 0).toFixed(2) == 0 ? '' : parseFloat(locals[4].ast || 0).toFixed(2)  %> </li>
+                <li>Rebounds: <%= parseFloat(locals[4].reb || 0).toFixed(2) == 0 ? '' : parseFloat(locals[4].reb || 0).toFixed(2)   %>  </li>
+                <li>Blocks: <%= parseFloat(locals[4].blk || 0).toFixed(2) == 0 ? '' : parseFloat(locals[4].blk || 0).toFixed(2) %> </li>
                 </ul> 
             </div>
         </div>

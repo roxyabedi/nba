@@ -9,7 +9,6 @@ const port = process.env.PORT || 3030;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-process.env.API_KEY = '28186af8-31c8-4c0b-a7fb-a88172da42b2';
 
 let player0 = {};
 let player1 = {};
@@ -51,7 +50,7 @@ app.post('/', async (req, res) => {
   try {
     //makes call to the api for player information
     const firstNamePlayers = await axiosGetWithAuthorization(
-      `http://api.balldontlie.io/v1/players?search=${firstName}`
+      `http://api.balldontlie.io/v1/players?per_page=100&search=${firstName}`
     );
 
     console.log('scotttest firstNamePlayers', firstNamePlayers);
@@ -102,7 +101,7 @@ app.post('/player1', async (req, res) => {
   try {
     //makes call to the api for player information
     const firstNamePlayers = await axiosGetWithAuthorization(
-      `http://api.balldontlie.io/v1/players?search=${firstName}`
+      `http://api.balldontlie.io/v1/players?per_page=100&search=${firstName}`
     );
 
     console.log('scotttest firstNamePlayers', firstNamePlayers);
@@ -151,32 +150,32 @@ app.post('/player2', async (req, res) => {
   const [firstName, lastName] = playerNameInput.split(' '); // ['Jayson', 'Tatum']
   try {
       //makes call to the api for player information
-      const firstNamePlayers = await axiosGetWithAuthorization(
-        `http://api.balldontlie.io/v1/players?search=${firstName}`
-      );
-  
-      console.log('scotttest firstNamePlayers', firstNamePlayers);
-  
-      const firstNameSet = new Set(
-        firstNamePlayers.data.map(
-          (player) => `${player.first_name} ${player.last_name}`
+    const firstNamePlayers = await axiosGetWithAuthorization(
+      `http://api.balldontlie.io/v1/players?per_page=100&search=${firstName}`
+    );
+
+    console.log('scotttest firstNamePlayers', firstNamePlayers);
+
+    const firstNameSet = new Set(
+      firstNamePlayers.data.map(
+        (player) => `${player.first_name} ${player.last_name}`
+      )
+    );
+
+    const lastNamePlayers = await axiosGetWithAuthorization(
+      `http://api.balldontlie.io/v1/players?search=${lastName}`
+    );
+
+    console.log('scotttest lastNamePlayers', lastNamePlayers);
+
+    const playerInformation = lastNamePlayers.data.length
+      ? lastNamePlayers.data.find((player) =>
+          firstNameSet.has(`${player.first_name} ${player.last_name}`)
         )
-      );
-  
-      const lastNamePlayers = await axiosGetWithAuthorization(
-        `http://api.balldontlie.io/v1/players?search=${lastName}`
-      );
-  
-      console.log('scotttest lastNamePlayers', lastNamePlayers);
-  
-      const playerInformation = lastNamePlayers.data.length
-        ? lastNamePlayers.data.find((player) =>
-            firstNameSet.has(`${player.first_name} ${player.last_name}`)
-          )
-        : firstNamePlayers.data[0];
-  
-      const playerId = playerInformation.id; //player id
-      console.log('roxytest', playerId);
+      : firstNamePlayers.data[0];
+
+    const playerId = playerInformation.id; //player id
+    console.log('roxytest', playerId);
 
     //makes call to the api for player stats
     const playerStats = await axiosGetWithAuthorization(
@@ -208,10 +207,11 @@ app.post('/playerTile', async (req, res) => {
     console.log('roxtest test1', playerNamePath);
 
     const [firstName, lastName] = playerNamePath.split('_'); // ['Jayson', 'Tatum']
+    console.log("firstname", firstName)
 
     //makes call to the api for player information
     const firstNamePlayers = await axiosGetWithAuthorization(
-      `http://api.balldontlie.io/v1/players?search=${firstName}`
+      `http://api.balldontlie.io/v1/players?per_page=100&search=${firstName}`
     );
 
     console.log('scotttest firstNamePlayers', firstNamePlayers);
@@ -234,9 +234,6 @@ app.post('/playerTile', async (req, res) => {
         )
       : firstNamePlayers.data[0];
 
-    const apiPlayerInfo = await axiosGetWithAuthorization(
-      `http://api.balldontlie.io/v1/players?search=${playerNamePath}`
-    );
 
     const playerId = playerInformation.id; //player id
 
