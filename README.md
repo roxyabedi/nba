@@ -41,11 +41,11 @@ Install the necessary dependencies:
 npm install
 ```
 ### Running the Application
-Start the server:
+1. Start the server:
 ```
 npm start
 ````
-### Open your web browser and visit:
+2. Open your web browser and visit:
 ```
 http://localhost:3000
 ```
@@ -54,4 +54,4 @@ The website should now be running, and you can view the Boston Celtics player st
 
 ### API Integration
 
-This project utilizes the balldontlie API to fetch real-time statistics and player information for the Boston Celtics. The API calls are handled server-side, and the data is rendered on the front end using EJS templates.
+This project utilizes the [balldontlie API](https://www.balldontlie.io/#introduction) to fetch real-time statistics and player information for the Boston Celtics. The API calls are handled server-side, and the data is rendered on the front end using EJS templates.
