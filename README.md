@@ -6,7 +6,6 @@ Welcome to the Boston Celtics Stats Website! This project is a web application d
 
 <img width="1470" alt="celtics" src="https://github.com/user-attachments/assets/11dadf64-6971-4032-ba46-9bf21b08442a">
 
-
 ### Features
 
 - Current Player Stats: View and compare up-to-date statistics for each player on the Boston Celtics roster.
