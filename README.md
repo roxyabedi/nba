@@ -1,5 +1,10 @@
 # [Boston Celtics Stats Website](https://nba-celtics.onrender.com)
 
+## ⚠️ Notice: API Access Update
+
+<b>Note:</b> This project originally used the [balldontlie API](https://docs.balldontlie.io/#nba-api) for live data. As of recently, the API has moved behind a paywall, so the live version is no longer functional.
+The full source code remains available here, and you can explore the app’s structure, logic, and components.
+
 ## Overview
 
 Welcome to the Boston Celtics Stats Website! This project is a web application developed using Express.js, Node.js, EJS, JavaScript, HTML, and CSS. It provides current statistics and player information for the Boston Celtics roster during the 2023-2024 NBA season. The data is dynamically fetched from the [balldontlie API](https://www.balldontlie.io/#introduction) to ensure up-to-date information on player stats.
