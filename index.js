@@ -50,10 +50,8 @@ app.post('/', async (req, res) => {
   try {
     //makes call to the api for player information
     const firstNamePlayers = await axiosGetWithAuthorization(
-      `http://api.balldontlie.io/v1/players?per_page=100&search=${firstName}`
+      `https://api.balldontlie.io/v1/players?per_page=100&search=${firstName}`
     );
-
-    console.log('scotttest firstNamePlayers', firstNamePlayers);
 
     const firstNameSet = new Set(
       firstNamePlayers.data.map(
@@ -62,10 +60,8 @@ app.post('/', async (req, res) => {
     );
 
     const lastNamePlayers = await axiosGetWithAuthorization(
-      `http://api.balldontlie.io/v1/players?search=${lastName}`
+      `https://api.balldontlie.io/v1/players?search=${lastName}`
     );
-
-    console.log('scotttest lastNamePlayers', lastNamePlayers);
 
     const playerInformation = lastNamePlayers.data.length
       ? lastNamePlayers.data.find((player) =>
@@ -74,15 +70,12 @@ app.post('/', async (req, res) => {
       : firstNamePlayers.data[0];
 
     const playerId = playerInformation.id; //player id
-    console.log('roxytest', playerId);
 
     //makes call to the api for player stats
     const playerStats = await axiosGetWithAuthorization(
-      `https://api.balldontlie.io/v1/season_averages?season=2023&player_ids[]=${playerId}`
+      `https://api.balldontlie.io/v1/season_averages/general?season=2023&season_type=regular&type=base&player_ids[]=${playerId}`
     );
-    console.log('hello', playerStats);
     const seasonStats = playerStats.data[0];
-    console.log('points', seasonStats);
 
     //combines player information
     player0 = Object.assign(playerInformation, seasonStats);
@@ -101,10 +94,8 @@ app.post('/player1', async (req, res) => {
   try {
     //makes call to the api for player information
     const firstNamePlayers = await axiosGetWithAuthorization(
-      `http://api.balldontlie.io/v1/players?per_page=100&search=${firstName}`
+      `https://api.balldontlie.io/v1/players?per_page=100&search=${firstName}`
     );
-
-    console.log('scotttest firstNamePlayers', firstNamePlayers);
 
     const firstNameSet = new Set(
       firstNamePlayers.data.map(
@@ -113,10 +104,8 @@ app.post('/player1', async (req, res) => {
     );
 
     const lastNamePlayers = await axiosGetWithAuthorization(
-      `http://api.balldontlie.io/v1/players?search=${lastName}`
+      `https://api.balldontlie.io/v1/players?search=${lastName}`
     );
-
-    console.log('scotttest lastNamePlayers', lastNamePlayers);
 
     const playerInformation = lastNamePlayers.data.length
       ? lastNamePlayers.data.find((player) =>
@@ -125,11 +114,10 @@ app.post('/player1', async (req, res) => {
       : firstNamePlayers.data[0];
 
     const playerId = playerInformation.id; //player id
-    console.log('roxytest', playerId);
 
     //makes call to the api for player stats
     const playerStats = await axiosGetWithAuthorization(
-      `https://api.balldontlie.io/v1/season_averages?season=2023&player_ids[]=${playerId}`
+      `https://api.balldontlie.io/v1/season_averages/general?season=2023&season_type=regular&type=base&player_ids[]=${playerId}`
     );
 
     const seasonStats = playerStats.data[0];
@@ -151,10 +139,8 @@ app.post('/player2', async (req, res) => {
   try {
       //makes call to the api for player information
     const firstNamePlayers = await axiosGetWithAuthorization(
-      `http://api.balldontlie.io/v1/players?per_page=100&search=${firstName}`
+      `https://api.balldontlie.io/v1/players?per_page=100&search=${firstName}`
     );
-
-    console.log('scotttest firstNamePlayers', firstNamePlayers);
 
     const firstNameSet = new Set(
       firstNamePlayers.data.map(
@@ -163,10 +149,8 @@ app.post('/player2', async (req, res) => {
     );
 
     const lastNamePlayers = await axiosGetWithAuthorization(
-      `http://api.balldontlie.io/v1/players?search=${lastName}`
+      `https://api.balldontlie.io/v1/players?search=${lastName}`
     );
-
-    console.log('scotttest lastNamePlayers', lastNamePlayers);
 
     const playerInformation = lastNamePlayers.data.length
       ? lastNamePlayers.data.find((player) =>
@@ -175,11 +159,10 @@ app.post('/player2', async (req, res) => {
       : firstNamePlayers.data[0];
 
     const playerId = playerInformation.id; //player id
-    console.log('roxytest', playerId);
 
     //makes call to the api for player stats
     const playerStats = await axiosGetWithAuthorization(
-      `https://api.balldontlie.io/v1/season_averages?season=2023&player_ids[]=${playerId}`
+      `https://api.balldontlie.io/v1/season_averages/general?season=2023&season_type=regular&type=base&player_ids[]=${playerId}`
     );
 
     const seasonStats = playerStats.data[0];
@@ -195,26 +178,18 @@ app.post('/player2', async (req, res) => {
 });
 
 app.post('/playerTile', async (req, res) => {
-  console.log('scotttest goes through');
   const playerNamePath = Object.keys(req.body)[0];
 
-  console.log('scotttest playerNamePath', playerNamePath);
   try {
     //reloads the page
-    console.log('scotttest test1', playerNamePath);
     playerCardImage = `/images/${playerNamePath}.png`;
-    console.log(playerCardImage);
-    console.log('roxtest test1', playerNamePath);
 
     const [firstName, lastName] = playerNamePath.split('_'); // ['Jayson', 'Tatum']
-    console.log("firstname", firstName)
 
     //makes call to the api for player information
     const firstNamePlayers = await axiosGetWithAuthorization(
-      `http://api.balldontlie.io/v1/players?per_page=100&search=${firstName}`
+      `https://api.balldontlie.io/v1/players?per_page=100&search=${firstName}`
     );
-
-    console.log('scotttest firstNamePlayers', firstNamePlayers);
 
     const firstNameSet = new Set(
       firstNamePlayers.data.map(
@@ -225,8 +200,6 @@ app.post('/playerTile', async (req, res) => {
     const lastNamePlayers = await axiosGetWithAuthorization(
       `http://api.balldontlie.io/v1/players?search=${lastName}`
     );
-
-    console.log('scotttest lastNamePlayers', lastNamePlayers);
 
     const playerInformation = lastNamePlayers.data.length
       ? lastNamePlayers.data.find((player) =>
@@ -239,7 +212,7 @@ app.post('/playerTile', async (req, res) => {
 
     //makes call to the api for player stats
     const playerStats = await axiosGetWithAuthorization(
-      `https://api.balldontlie.io/v1/season_averages?season=2023&player_ids[]=${playerId}`
+      `https://api.balldontlie.io/v1/season_averages/general?season=2023&season_type=regular&type=base&player_ids[]=${playerId}`
     );
 
     const seasonStats = playerStats.data[0];
